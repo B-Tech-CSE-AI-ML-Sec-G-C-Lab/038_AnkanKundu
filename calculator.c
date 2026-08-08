@@ -30,17 +30,32 @@ void displayMenu(){
 }
 
 int main(){
-    printf("Calculator : \n");
-    displayMenu();
-    int x;
-    scanf("%d",&x);
-    switch (x)
-    {
-    case 1:
-        
-        break;
-    
-    default:
-        break;
-    }
+    printf("Calculator : \n"); 
+    int x=-1;
+    do{
+        displayMenu();
+        scanf("%d",&x);
+        if(x!=1 && x!=2 && x!=3 && x!=4)break;
+        int n1,n2;
+        printf("Enter Two Numbers To perform Calculation on :");
+        scanf("%d %d",&n1,&n2);
+        switch (x)
+        {
+        case 1:
+            printf("%d",add(n1,n2));
+            break;
+        case 2:
+            printf("%d",substract(n1,n2));
+            break;
+        case 3:
+            printf("%d",multiply(n1,n2));
+            break;
+        case 4:
+            printf("%.2f",divide(n1,n2));
+            break;
+        }
+        printf("\n");
+    }while(x==1 || x==2 || x==3 || x==4);
+
+    return 0;
 }
